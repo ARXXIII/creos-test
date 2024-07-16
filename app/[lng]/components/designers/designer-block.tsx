@@ -2,14 +2,20 @@
 
 import { motion } from 'framer-motion'
 import { UserAvatar } from '../avatar'
+import { useTranslation } from '@/app/i18n/client'
 
 interface DesignerBlockProps {
+    lng: string
     name: string
     img?: string
     email: string
+    done: number
+    inProgress: number
 }
 
-export const DesignerBlock = ({ name, img, email }: DesignerBlockProps) => {
+export const DesignerBlock = ({ lng, name, img, email, done, inProgress }: DesignerBlockProps) => {
+    const { t } = useTranslation(lng, 'designer')
+
     const initial = name.split('').shift()
 
     return (
@@ -23,19 +29,21 @@ export const DesignerBlock = ({ name, img, email }: DesignerBlockProps) => {
                 <UserAvatar initial={initial!} img={img} />
                 <h1 className="font-bold text-xl">{name}</h1>
             </div>
-            <div className='flex flex-col lg:flex-row lg:items-center gap-3'>
+            <div className='flex items-center gap-x-3'>
                 <h2 className='font-bold'>Email:</h2>
                 <a href={`mailto:${email}`}>{email}</a>
             </div>
             <div className='space-y-3'>
-                <h3 className='font-bold text-lg'>Задачи:</h3>
-                <div className='flex items-center gap-x-3'>
-                    <h4 className='font-bold'>Закрытые:</h4>
-                    <p>5</p>
-                </div>
-                <div className='flex items-center gap-x-3'>
-                    <h4 className='font-bold'>В процессе:</h4>
-                    <p>5</p>
+                <h3 className='text-center font-bold text-lg'>{t('issues')}</h3>
+                <div className='flex justify-between items-center gap-x-3'>
+                    <div className='flex items-center gap-x-3'>
+                        <h4 className='font-semibold'>{t('done')}:</h4>
+                        <p className='px-2 py-1 bg-neutral-200 dark:bg-zinc-800 rounded-lg shadow-neumorphism-light dark:shadow-neumorphism-dark'>{done}</p>
+                    </div>
+                    <div className='flex items-center gap-x-3'>
+                        <h4 className='font-semibold'>{t('inProgress')}:</h4>
+                        <p className='px-2 py-1 bg-neutral-200 dark:bg-zinc-800 rounded-lg shadow-neumorphism-light dark:shadow-neumorphism-dark'>{inProgress}</p>
+                    </div>
                 </div>
             </div>
         </motion.div>
