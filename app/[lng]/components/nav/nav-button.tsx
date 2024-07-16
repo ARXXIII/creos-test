@@ -23,8 +23,12 @@ export const NavButton = ({ isActive, lng, toggleMenu }: NavButtonProps) => {
     }
 
     return (
-        <button type='button' className="p-3 font-bold text-xl lg:text-2xl bg-neutral-200 dark:bg-zinc-800 rounded-lg shadow-neumorphism-light dark:shadow-neumorphism-dark">
-            <div onClick={() => toggleMenu()} >
+        <button
+            type='button'
+            onClick={() => toggleMenu()}
+            className="p-3 font-bold text-xl lg:text-2xl text-neutral-500 dark:text-neutral-400 bg-neutral-200 dark:bg-zinc-800 rounded-lg shadow-neumorphism-light dark:shadow-neumorphism-dark"
+        >
+            <div>
                 {isActive ? <X /> : <Menu />}
             </div>
         </button>
