@@ -27,6 +27,6 @@ export const LangSwitcher = () => {
     }, [lng])
 
     return (
-        <Toggle isActive={isActive} func={switchLang} />
+        <Toggle type="lang" isActive={isActive} func={switchLang} />
     )
 }

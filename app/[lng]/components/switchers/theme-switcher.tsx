@@ -26,6 +26,6 @@ export const ThemeSwitcher = () => {
     }, [theme])
 
     return (
-        <Toggle isActive={isActive} func={() => switchTheme()} />
+        <Toggle type="theme" isActive={isActive} func={() => switchTheme()} />
     )
 }
