@@ -7,9 +7,9 @@ interface UserAvatarProps {
 
 export const UserAvatar = ({ initial, img }: UserAvatarProps) => {
     return (
-        <Avatar>
+        <Avatar className="shadow-neumorphism-light dark:shadow-neumorphism-dark">
             <AvatarImage src={img} />
-            <AvatarFallback className="font-bold uppercase">{initial}</AvatarFallback>
+            <AvatarFallback className="font-bold bg-neutral-200 dark:bg-zinc-800 uppercase">{initial}</AvatarFallback>
         </Avatar>
     )
 }
