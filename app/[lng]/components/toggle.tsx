@@ -2,13 +2,15 @@
 
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+import { BadgeDollarSign, BadgeRussianRuble, Moon, Sun } from 'lucide-react'
 
 interface ToggleProps {
+    type: string
     isActive: boolean
     func: () => void
 }
 
-export const Toggle = ({ isActive, func, }: ToggleProps) => {
+export const Toggle = ({ type, isActive, func, }: ToggleProps) => {
 
     const spring = {
         type: "spring",
@@ -26,8 +28,15 @@ export const Toggle = ({ isActive, func, }: ToggleProps) => {
             <motion.div
                 layout
                 transition={spring}
-                className='w-[32px] h-full bg-black dark:bg-white rounded-full'
-            />
+                className='flex justify-center items-center w-[32px] h-full font-semibold text-white bg-neutral-500 dark:bg-neutral-400 rounded-full'
+            >
+                {type === 'theme' && (
+                    isActive ? <Moon /> : <Sun />
+                )}
+                {type === 'lang' && (
+                    isActive ? <BadgeDollarSign /> : <BadgeRussianRuble />
+                )}
+            </motion.div>
         </div>
     )
 }
