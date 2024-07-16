@@ -1,4 +1,6 @@
 {
 	"title": "Last comments",
-	"top": "Top 10 designers"
+	"top": "Top 10 designers",
+	"noTop": "No top",
+	"noComments": "No comments"
 }
