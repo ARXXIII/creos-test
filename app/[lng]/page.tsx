@@ -83,22 +83,26 @@ const Page = ({ params: { lng } }: { params: { lng: string } }) => {
                     </motion.h1>
                 </div>
                 <div>
+
                     {top ? (
-                        <div className='grid grid-cols-2 lg:grid-cols-5 gap-6'>
+                        <div className='grid grid-cols-2 xl:grid-cols-5 gap-6'>
 
                             {top.map((designer, index) => (
                                 <TopItem key={designer.designer} name={designer.designer} position={index + 1} />
                             ))}
 
                         </div>
-                    ) : <motion.div
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1 }}
-                        className='flex justify-center items-center'
-                    >
-                        <h1 className='p-3 text-2xl bg-neutral-200 dark:bg-zinc-800 rounded-xl shadow-neumorphism-light dark:shadow-neumorphism-dark'>{t('noTop')}</h1>
-                    </motion.div>}
+                    ) : (
+                        <motion.div
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1 }}
+                            className='flex justify-center items-center'
+                        >
+                            <h1 className='p-3 text-2xl bg-neutral-200 dark:bg-zinc-800 rounded-xl shadow-neumorphism-light dark:shadow-neumorphism-dark'>{t('noTop')}</h1>
+                        </motion.div>
+                    )}
+
                 </div>
             </section>
             <section className='space-y-6'>
