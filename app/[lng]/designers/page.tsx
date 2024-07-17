@@ -123,12 +123,12 @@ const Designers = ({ params: { lng } }: { params: { lng: string } }) => {
 
     return (
         <>
-            <section className='flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6'>
+            <section className='flex flex-col md:flex-row md:justify-between md:items-center gap-6'>
                 <motion.div
                     initial={{ x: -500 }}
                     animate={{ x: 0 }}
                     transition={{ type: 'spring', }}
-                    className="flex justify-between lg:justify-start items-center gap-x-3 lg:gap-x-6"
+                    className="flex justify-between md:justify-start items-center gap-x-3 md:gap-x-6"
                 >
                     <h1 className="font-semibold text-xl text-neutral-500 dark:text-neutral-400">{t('sort')}</h1>
                     <SortByName title={t('sortByName')} type={byName!} sort={sortByName} />
@@ -138,7 +138,7 @@ const Designers = ({ params: { lng } }: { params: { lng: string } }) => {
                     initial={{ x: 500 }}
                     animate={{ x: 0 }}
                     transition={{ type: 'spring', }}
-                    className="flex justify-between lg:justify-start items-center gap-x-3 lg:gap-x-6"
+                    className="flex justify-between md:justify-start items-center gap-x-3 md:gap-x-6"
                 >
                     <motion.div
                         initial={{ scale: 0 }}
@@ -162,7 +162,7 @@ const Designers = ({ params: { lng } }: { params: { lng: string } }) => {
             <section>
 
                 {designers ? (
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
 
                         {designers.map((designer) => (
                             <DesignerBlock
