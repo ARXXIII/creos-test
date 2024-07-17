@@ -1,0 +1,13 @@
+{
+    "show": "Показывать",
+    "week": "неделя",
+    "weeks": "недель",
+    "income": "Доход",
+    "expenses":"Расходы",
+    "profit": "Прибыль",
+    "new": "Новые",
+    "done": "Закрытые",
+    "inProgress": "В процессе",
+    "completedTasks": "Выполненные задачи",
+    "distributionOfTasks": "Распределение задач"
+}
