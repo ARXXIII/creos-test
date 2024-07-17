@@ -28,7 +28,7 @@ export const Toggle = ({ type, isActive, func, }: ToggleProps) => {
             <motion.div
                 layout
                 transition={spring}
-                className='flex justify-center items-center w-[32px] h-full font-semibold text-white bg-neutral-500 dark:bg-neutral-400 rounded-full'
+                className='flex justify-center items-center w-[32px] h-full font-semibold text-neutral-200 dark:text-zinc-800 bg-neutral-500 dark:bg-neutral-400 rounded-full'
             >
                 {type === 'theme' && (
                     isActive ? <Moon /> : <Sun />
