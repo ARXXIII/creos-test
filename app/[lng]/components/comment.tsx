@@ -4,6 +4,8 @@ import { ru } from 'date-fns/locale'
 import { UserAvatar } from "./avatar"
 import { motion } from 'framer-motion'
 import { formatRelative, subDays } from 'date-fns'
+import { cn } from '@/lib/utils'
+import { useState } from 'react'
 
 interface CommentProps {
     lng: string
@@ -15,6 +17,10 @@ interface CommentProps {
 }
 
 export const Comment = ({ lng, name, img, task, message, time }: CommentProps) => {
+    const [truncated, setTruncated] = useState<boolean>(true)
+
+    const change = () => setTruncated(!truncated)
+
     const initial = name.split('').shift()
 
     const commentAgo = lng === 'ru' ? formatRelative(time, new Date(), { locale: ru }) : formatRelative(time, new Date())
@@ -33,7 +39,11 @@ export const Comment = ({ lng, name, img, task, message, time }: CommentProps) =
                 </div>
                 <div className="space-y-3">
                     <h2 className="font-bold text-lg">{task}</h2>
-                    <p className="leading-relaxed">{message}</p>
+                    <p onClick={change} className={cn("leading-relaxed",
+                        truncated && 'truncate  cursor-pointer',
+                    )}>
+                        {message}
+                    </p>
                 </div>
             </div>
             <p className="text-end text-xs text-neutral-500 dark:text-neutral-400">{commentAgo}</p>
