@@ -21,7 +21,7 @@ export const NavLink = ({ title, href, lng, index, isActive, toggleMenu }: NavLi
         initial: {
             opacity: 0,
             rotateX: 90,
-            translateX: -20,
+            translateX: -10,
             translateY: 80,
         },
         enter: (i: number) => ({
